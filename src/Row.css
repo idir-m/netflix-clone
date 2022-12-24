@@ -1,0 +1,37 @@
+.row{
+    margin-left: 1.5rem;
+    color: white;
+    margin-top: 1em;
+}
+.row__posters{
+    display: flex;
+    gap: 0.6em;
+    padding: 0.9em;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+.row__posters::-webkit-scrollbar{
+    display: none;
+}
+
+.row__poster{
+    width: 100%;
+    min-width: 200px;
+    object-fit: contain;
+    transition: transform 450ms;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.row__poster:hover{
+    transform: scale(1.07);
+}
+
+.row__posterLarge{
+    min-width: 180px;
+}
+
+.row__posterLarge:hover{
+    transform: scale(1.08);
+}
