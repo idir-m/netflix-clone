@@ -12,12 +12,71 @@
     object-fit: contain;
     cursor: pointer;
 }
-.nav__avatar{
-    width: 2rem;
-    object-fit: contain;
-}
 
 .nav__black{
     transition: all 0.5s ease-in;
     background-color: black;
+    
 }
+
+.nav__linksAndLogo{
+    flex: 0.6;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.nav__links{
+    color: #dadada;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    
+}
+
+.nav__links:nth-child(2){
+    color: #fff;
+    font-weight: 600;
+}
+
+.nav__links:hover{
+    transition: all 0.1s ease-in;
+    color: #fff;
+    
+    
+}
+
+.nav__menuAndAvatar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0.1;
+}
+.nav__avatar{
+    
+    width: 2rem;
+    object-fit: contain;
+    margin-left: auto;
+}
+
+.nav__humMenu{
+    display: none;
+}
+
+
+@media only screen and (max-width:1200px){
+    .nav__links{
+        display: none;
+    }
+    .nav__humMenu{
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin-left: 30px;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+    
+}
+

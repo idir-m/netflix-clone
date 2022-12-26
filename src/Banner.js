@@ -13,6 +13,9 @@ function Banner() {
 
         
         setMovies(response.data.results[Math.floor(Math.random() * response.data.results.length -1)])
+
+        
+            
        
 
         return response;
@@ -28,10 +31,12 @@ function Banner() {
   return (
     <header className='banner'
             style={{
+                backgroundColor: "#545454",
                 backgroundSize: "cover",
                 backgroundImage : `url(
                     https://image.tmdb.org/t/p/original/${movie?.backdrop_path}
                 )`,
+                backgroundBlendMode: 'multiply',
                 backgroundPosition: "center center",
             }}>
         <div className='banner__contents'>
@@ -39,8 +44,8 @@ function Banner() {
                 movie?.title || movie?.name || movie?.original_name
             }</h1>
             <div className='banner__btns'>
-                <button className='banner__btn'>Play</button>
-                <button className='banner__2btn'>More info</button>
+                <button className='btn banner__btn'>Play</button>
+                <button className='btn banner__2btn'>More info</button>
             </div>
             
 
