@@ -10,7 +10,6 @@ function Nav() {
   function handleClickMenu() {
       if(responsiveNavBar){
           setresponsiveNavBar(false)
-          
       }
       else{
           setresponsiveNavBar(true) 
@@ -64,7 +63,6 @@ function Nav() {
             />
           <img
                   className="nav__avatar"
-                  
                   src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
                   alt="Netflix Avatar"
                   
