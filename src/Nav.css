@@ -1,11 +1,18 @@
 .nav{
+    position: relative;
     display: flex;
     padding: 1.5rem;
     justify-content: space-between;
     position: fixed;
     width: 100%;
-    z-index: 1;
+    z-index: 1; 
 }
+
+
+.nav__responsiveLinks .nav__link{
+    font-size: 1.4rem;
+}
+
 
 .nav__logo{
     width: 6rem;
@@ -20,31 +27,33 @@
 }
 
 .nav__linksAndLogo{
-    flex: 0.6;
+    flex: 0.8;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-
+}
+.nav__links{
+    margin-right: auto;
+    margin-left: 2rem;
+    display: flex;
+    justify-content: space-around;
 }
 
-.nav__links{
+.nav__link{
     color: #dadada;
     font-weight: 500;
     font-size: 0.9rem;
     cursor: pointer;
-    
+    margin-left: 1.2rem;
 }
 
-.nav__links:nth-child(2){
+.nav__link:nth-child(1){
     color: #fff;
     font-weight: 600;
 }
 
-.nav__links:hover{
+.nav__link:hover{
     transition: all 0.1s ease-in;
     color: #fff;
-    
-    
 }
 
 .nav__menuAndAvatar{
@@ -54,7 +63,6 @@
     flex: 0.1;
 }
 .nav__avatar{
-    
     width: 2rem;
     object-fit: contain;
     margin-left: auto;
@@ -64,8 +72,12 @@
     display: none;
 }
 
+.nav__responsiveLinks{
+    display: none;
+}
 
-@media only screen and (max-width:1200px){
+
+@media only screen and (max-width:900px){
     .nav__links{
         display: none;
     }
@@ -78,5 +90,42 @@
         cursor: pointer;
     }
     
+     .nav__responsiveLinks{
+        position: absolute;
+        top: 88px;
+        left: 0;
+        background-color: black;
+        color: #dadada;
+        width: 100vw;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 1.4rem;
+        transition: all 0.5s ease-in;
+    }
+    
+    .nav__responsiveblack{
+        background-color: black;
+
+    }
+    /*
+    .nav__responsiveLinks{
+        position: absolute;
+        top: 88px;
+        left: 0;
+        backdrop-filter: blur(4px);
+        color: #dadada;
+        width: 100vw;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        gap: 1.4rem;
+    }
+    */
+ 
 }
 

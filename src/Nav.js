@@ -5,6 +5,17 @@ import menuLogo from './images/icons8-menu-rounded-50.png'
 function Nav() {
 
   const [scrollDown, setscrollDown] = useState(false);
+  const [responsiveNavBar, setresponsiveNavBar] = useState(false)
+
+  function handleClickMenu() {
+      if(responsiveNavBar){
+          setresponsiveNavBar(false)
+          
+      }
+      else{
+          setresponsiveNavBar(true) 
+      }
+  }
 
   useEffect(() => {
     
@@ -24,19 +35,22 @@ function Nav() {
   
 
   return (
-    <div className={`nav ${scrollDown && "nav__black"}`}>
+    <div className={`nav ${scrollDown && "nav__black"} ${responsiveNavBar && "nav__responsiveblack"}`}>
       <div className="nav__linksAndLogo">
           <img
                   className="nav__logo"
                   src="https://upload.wikimedia.org/wikipedia/commons/0/08/Netflix_2015_logo.svg"
                   alt="Netflix Logo"
           />
-          <span  className="nav__links">Home</span >
-          <span className="nav__links">Tv Shows</span >
-          <span className="nav__links">Movies</span >
-          <span className="nav__links">New & Popular</span >
-          <span className="nav__links">My List</span >
-          <span className="nav__links">Browse by Language</span >
+          <div className="nav__links">
+              <span className="nav__link">Home</span >
+              <span className="nav__link">Tv Shows</span >
+              <span className="nav__link">Movies</span >
+              <span className="nav__link">New & Popular</span >
+              <span className="nav__link">My List</span >
+              <span className="nav__link">Browse by Language</span >
+          </div>
+            
 
       </div>
         
@@ -46,13 +60,31 @@ function Nav() {
             className='nav__humMenu'
             src={menuLogo}
             alt='menue'
+            onClick={() => handleClickMenu()}
             />
           <img
                   className="nav__avatar"
+                  
                   src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
                   alt="Netflix Avatar"
+                  
               />
       </div>
+      {
+        responsiveNavBar
+              &&
+
+        <div className="nav__responsiveLinks">
+            <span className="nav__link">Home</span >
+            <span className="nav__link">Tv Shows</span >
+            <span className="nav__link">Movies</span >
+            <span className="nav__link">New & Popular</span >
+            <span className="nav__link">My List</span >
+            <span className="nav__link">Browse by Language</span >
+        </div> 
+
+      }
+         
           
     </div>
   )
